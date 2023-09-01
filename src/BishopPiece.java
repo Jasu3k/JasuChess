@@ -1,6 +1,5 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.awt.*;
 
 public class BishopPiece extends ImageView {

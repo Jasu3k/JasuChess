@@ -1,8 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.awt.*;
-
 
 public class RookPiece extends ImageView{
     private Color color;

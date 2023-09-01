@@ -3,14 +3,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.EventHandler;
 import javafx.scene.input.*;
-
-//import javafx.scene.paint.Color;
-
-
-
-
-
-
 import java.awt.*;
 
 public class ChessboardInitializer {

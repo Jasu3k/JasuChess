@@ -1,9 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.awt.*;
-
-
 
 public class PawnPiece extends ImageView{
     private Color color;

@@ -17,12 +17,9 @@ import java.awt.*;
 
 //extends javafx application
 public class Main extends Application {
-
     Scene scene, scene2;
-    //naming the button object, lowercase purple is its name
     Button button;
-
-
+    
     public static void main(String[] args) {
 
         launch(args);
@@ -115,31 +112,7 @@ public class Main extends Application {
 
             }
         }
-           /* for (int row = 0; row < 8; row++){
-                for (int col = 0; col < 8; col++) {
-                    Button button = new Button();
-                    button.setPrefSize(96, 96);
-                    if ((row + col) % 2 == 0) {
-                        button.setStyle("-fx-background-color: #EDBC8C;");
-                    } else {
-                        button.setStyle("-fx-background-color: #70350B;");
-                    }
-                    chessBoard[row][col] = button;
-                    }
-                }
 
-
-        GridPane grid = new GridPane();
-            for (int row = 0; row < 8; row++) {
-                for (int col = 0; col < 8; col++) {
-                    grid.add(chessBoard[row][col], col, row);
-                }
-            } */
-        //end of code that needs to be replaced
-        // StackPane layout2 = new StackPane();
-        //add grid here
-//layout2.getChildren().add(grid);
-//StackPane.setAlignment(grid, Pos.CENTER);
         grid.setAlignment(Pos.CENTER);
 
         BorderPane layout2 = new BorderPane();
@@ -148,18 +121,3 @@ public class Main extends Application {
 
     }
 }
-    //make the chessboard in layout2
-        //quick test to add pieces
-
-       /* KingPiece kingPiece = new KingPiece(Color.WHITE, 80);
-        chessBoard[7][4].setGraphic(kingPiece);
-
-        KingPiece kingPiece1 = new KingPiece(Color.BLACK, 80);
-        chessBoard[0][4].setGraphic(kingPiece1);
-
-
-
-         }
-         }
-         */
-
