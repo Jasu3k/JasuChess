@@ -46,15 +46,11 @@ public class Main extends Application {
         });
 
 
-        //sets the button in the middle of the scene
-   /* StackPane layout = new StackPane();
-    layout.getChildren().add(button); */
 
         BorderPane layout = new BorderPane();
         layout.setCenter(button);
 
-        //  BorderPane layout = new BorderPane();
-        //  layout.setCenter(button);
+
 
         //creates a scene and how big it is
         Scene scene = new Scene(layout, 300, 250);
@@ -63,8 +59,7 @@ public class Main extends Application {
         //shows the scene to the user
         primaryStage.show();
 
-        //replace code below with initializer
-        //scene2 layout, make chessboard here
+
 
         Button[][] chessBoardButtons = new Button[8][8];
         ChessboardInitializer initializer = new ChessboardInitializer("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR", chessBoardButtons);
