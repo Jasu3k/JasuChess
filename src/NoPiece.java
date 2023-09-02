@@ -12,7 +12,6 @@ public class NoPiece extends ImageView {
             // Define the relative path to the white pawn image
             String relativePath = "assets/White/noPiece.png";
 
-            // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
             if (inputStream != null) {
                 Image image = new Image(inputStream);
