@@ -1,16 +1,18 @@
+package pieces;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.awt.*;
-
 import java.io.InputStream;
 
-public class BishopPiece extends ImageView {
+public class Pawn extends ImageView{
     private Color color;
 
-    public BishopPiece(Color color, double size) {
+    public Pawn(Color color, double size){
+
         if (color == Color.WHITE) {
             // Define the relative path to the white pawn image
-            String relativePath = "assets/White/whiteBishop.png";
+            String relativePath = "assets/White/whitePawn.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -23,7 +25,7 @@ public class BishopPiece extends ImageView {
             }
         } else if (color == Color.BLACK) {
             // Define the relative path to the black pawn image
-            String relativePath = "assets/Black/blackBishop.png";
+            String relativePath = "assets/Black/blackPawn.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -38,4 +40,5 @@ public class BishopPiece extends ImageView {
         setFitWidth(size);
         setFitHeight(size);
     }
+    //behavior methods here
 }

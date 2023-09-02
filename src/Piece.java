@@ -1,4 +1,3 @@
-//public static class Piece?
 public class Piece {
     public static final int None = 0;
     public static final int King = 1;

@@ -6,15 +6,11 @@ import javafx.scene.input.*;
 import java.awt.*;
 
 public class ChessboardInitializer {
-    private String fenString;
-    //private variable to hold the FENstring
+    final private String fenString;
     private int[][] chessboard;
-    //private variable that represents the chessboard as a 2d array
     private Button[][] chessBoardButtons;
-    //private variable that holds the 2d array of buttons
 
 
-    //declaring the constructor and its parameters
     public ChessboardInitializer(String fenString, Button[][] chessBoardButtons){
         this.fenString = fenString;
         this.chessboard = new int[8][8];
@@ -107,95 +103,45 @@ public class ChessboardInitializer {
                 button.setGraphic(pieceImageView);
                 DragAndDropHandler dragAndDropHandler = new DragAndDropHandler(pieceImageView, chessBoardButtons);
 
-                switch(piece){
-                    case Piece.WHITE_KING:
-                        button.setGraphic(new KingPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.WHITE_QUEEN:
-                        button.setGraphic(new QueenPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.WHITE_ROOK:
-                        button.setGraphic(new RookPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.WHITE_BISHOP:
-                        button.setGraphic(new BishopPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.WHITE_KNIGHT:
-                        button.setGraphic(new KnightPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.WHITE_PAWN:
-                        button.setGraphic(new PawnPiece(Color.WHITE, 84));
-                        break;
-                    case Piece.BLACK_KING:
-                        button.setGraphic(new KingPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.BLACK_QUEEN:
-                        button.setGraphic(new QueenPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.BLACK_ROOK:
-                        button.setGraphic(new RookPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.BLACK_BISHOP:
-                        button.setGraphic(new BishopPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.BLACK_KNIGHT:
-                        button.setGraphic(new KnightPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.BLACK_PAWN:
-                        button.setGraphic(new PawnPiece(Color.BLACK, 84));
-                        break;
-                    case Piece.None:
-                        button.setGraphic(new NoPiece(Color.WHITE, 84));
-                        break;
-                    default:
-                        break;
-                }
+                button.setGraphic(switch (piece) {
+                    case Piece.WHITE_KING -> new KingPiece(Color.WHITE, 84);
+                    case Piece.WHITE_QUEEN -> new QueenPiece(Color.WHITE, 84);
+                    case Piece.WHITE_ROOK -> new RookPiece(Color.WHITE, 84);
+                    case Piece.WHITE_BISHOP -> new BishopPiece(Color.WHITE, 84);
+                    case Piece.WHITE_KNIGHT -> new KnightPiece(Color.WHITE, 84);
+                    case Piece.WHITE_PAWN -> new PawnPiece(Color.WHITE, 84);
+                    case Piece.BLACK_KING -> new KingPiece(Color.BLACK, 84);
+                    case Piece.BLACK_QUEEN -> new QueenPiece(Color.BLACK, 84);
+                    case Piece.BLACK_ROOK -> new RookPiece(Color.BLACK, 84);
+                    case Piece.BLACK_BISHOP -> new BishopPiece(Color.BLACK, 84);
+                    case Piece.BLACK_KNIGHT -> new KnightPiece(Color.BLACK, 84);
+                    case Piece.BLACK_PAWN -> new PawnPiece(Color.BLACK, 84);
+                    case Piece.None -> new NoPiece(Color.WHITE, 84);
+                    default -> null;
+                });
             }
         }
     }
-    private ImageView createPieceImageView(int piece){
+    private ImageView createPieceImageView(int piece) {
         ImageView imageView = new ImageView();
-        switch(piece){
-            case Piece.WHITE_KING:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whiteKing.png"));
-                break;
-            case Piece.WHITE_QUEEN:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whiteQueen.png"));
-                break;
-            case Piece.WHITE_ROOK:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whiteRook.png"));
-                break;
-            case Piece.WHITE_BISHOP:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whiteBishop.png"));
-                break;
-            case Piece.WHITE_KNIGHT:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whiteHorse.png"));
-                break;
-            case Piece.WHITE_PAWN:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whitePawn.png"));
-                break;
-            case Piece.BLACK_KING:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackKing.png"));
-                break;
-            case Piece.BLACK_QUEEN:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackQueen.png"));
-                break;
-            case Piece.BLACK_ROOK:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackRook.png"));
-                break;
-            case Piece.BLACK_BISHOP:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackBishop.png"));
-                break;
-            case Piece.BLACK_KNIGHT:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackHorse.png"));
-                break;
-            case Piece.BLACK_PAWN:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackPawn.png"));
-                break;
-            default:
-                imageView.setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\noPiece.png"));
-                break;
-        }
+        String basePath = "/ChessSprites/";
+        String imagePath = switch(piece) {
+            case Piece.WHITE_KING -> basePath + "White/whiteKing.png";
+            case Piece.WHITE_QUEEN -> basePath + "White/whiteQueen.png";
+            case Piece.WHITE_ROOK -> basePath + "White/whiteRook.png";
+            case Piece.WHITE_BISHOP -> basePath + "White/whiteBishop.png";
+            case Piece.WHITE_KNIGHT -> basePath + "White/whiteHorse.png";
+            case Piece.WHITE_PAWN -> basePath + "White/whitePawn.png";
+            case Piece.BLACK_KING -> basePath + "Black/blackKing.png";
+            case Piece.BLACK_QUEEN -> basePath + "Black/blackQueen.png";
+            case Piece.BLACK_ROOK -> basePath + "Black/blackRook.png";
+            case Piece.BLACK_BISHOP -> basePath + "Black/blackBishop.png";
+            case Piece.BLACK_KNIGHT -> basePath + "Black/blackHorse.png";
+            case Piece.BLACK_PAWN -> basePath + "Black/blackPawn.png";
+            default -> basePath + "White/noPiece.png";
+        };
+
+        imageView.setImage(new Image(imagePath));
         imageView.setFitWidth(84);
         imageView.setFitHeight(84);
 

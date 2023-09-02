@@ -1,13 +1,15 @@
+package pieces;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.awt.*;
 
 import java.io.InputStream;
 
-public class KingPiece extends ImageView{
+public class King extends ImageView{
     private Color color;
 
-    public KingPiece(Color color, double size) {
+    public King(Color color, double size) {
         if (color == Color.WHITE) {
             // Define the relative path to the white pawn image
             String relativePath = "assets/White/whiteKing.png";

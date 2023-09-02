@@ -1,15 +1,17 @@
+package pieces;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.awt.*;
+import java.io.InputStream;
 
-public class PawnPiece extends ImageView{
+public class Rook extends ImageView{
     private Color color;
 
-    public PawnPiece(Color color, double size){
-
+    public Rook(Color color, double size){
         if (color == Color.WHITE) {
             // Define the relative path to the white pawn image
-            String relativePath = "assets/White/whitePawn.png";
+            String relativePath = "assets/White/whiteRook.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -22,7 +24,7 @@ public class PawnPiece extends ImageView{
             }
         } else if (color == Color.BLACK) {
             // Define the relative path to the black pawn image
-            String relativePath = "assets/Black/blackPawn.png";
+            String relativePath = "assets/Black/blackRook.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -34,16 +36,6 @@ public class PawnPiece extends ImageView{
                 System.err.println("Image not found: " + relativePath);
             }
         }
-        /*this.color = color;
-        String projectRoot = "JasuChess\\";
-
-        if(color == Color.WHITE) {
-            Path relativePath = Paths.get(projectRoot, "src", "assets", "White", "whitePawn.png");
-            System.out.println(relativePath);
-            setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\White\\whitePawn.png"));
-        } else if(color == Color.BLACK){
-            setImage(new Image("C:\\Users\\jassa\\OneDrive\\Desktop\\Jasu\\JasuProjects\\JavaChess\\ChessSprites\\Black\\blackPawn.png"));
-        }*/
         setFitWidth(size);
         setFitHeight(size);
     }

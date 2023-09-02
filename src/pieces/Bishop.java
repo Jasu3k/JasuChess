@@ -1,17 +1,17 @@
+package pieces;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.awt.*;
 import java.io.InputStream;
 
-public class QueenPiece extends ImageView{
+public class Bishop extends ImageView {
     private Color color;
 
-
-
-    public QueenPiece(Color color, double size){
+    public Bishop(Color color, double size) {
         if (color == Color.WHITE) {
             // Define the relative path to the white pawn image
-            String relativePath = "assets/White/whiteQueen.png";
+            String relativePath = "assets/White/whiteBishop.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -24,7 +24,7 @@ public class QueenPiece extends ImageView{
             }
         } else if (color == Color.BLACK) {
             // Define the relative path to the black pawn image
-            String relativePath = "assets/Black/blackQueen.png";
+            String relativePath = "assets/Black/blackBishop.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -39,5 +39,4 @@ public class QueenPiece extends ImageView{
         setFitWidth(size);
         setFitHeight(size);
     }
-    //methods and behaviors of queen here
 }

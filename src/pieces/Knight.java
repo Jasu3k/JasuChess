@@ -1,14 +1,19 @@
+package pieces;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.awt.*;
 
-public class RookPiece extends ImageView{
+import java.io.InputStream;
+
+public class Knight extends ImageView {
+
     private Color color;
 
-    public RookPiece(Color color, double size){
+    public Knight(Color color, double size) {
         if (color == Color.WHITE) {
             // Define the relative path to the white pawn image
-            String relativePath = "assets/White/whiteRook.png";
+            String relativePath = "assets/White/whiteHorse.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -21,7 +26,7 @@ public class RookPiece extends ImageView{
             }
         } else if (color == Color.BLACK) {
             // Define the relative path to the black pawn image
-            String relativePath = "assets/Black/blackRook.png";
+            String relativePath = "assets/Black/blackHorse.png";
 
             // Load the image using a class loader
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(relativePath);
@@ -36,5 +41,5 @@ public class RookPiece extends ImageView{
         setFitWidth(size);
         setFitHeight(size);
     }
-    //behavior methods here
+    //set behavior methods here
 }
