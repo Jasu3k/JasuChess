@@ -5,6 +5,13 @@ import javafx.event.EventHandler;
 import javafx.scene.input.*;
 import java.awt.*;
 
+import pieces.King;
+import pieces.Bishop;
+import pieces.Knight;
+import pieces.Pawn;
+import pieces.Queen;
+import pieces.Rook;
+
 public class ChessboardInitializer {
     final private String fenString;
     private int[][] chessboard;
@@ -104,18 +111,18 @@ public class ChessboardInitializer {
                 DragAndDropHandler dragAndDropHandler = new DragAndDropHandler(pieceImageView, chessBoardButtons);
 
                 button.setGraphic(switch (piece) {
-                    case Piece.WHITE_KING -> new KingPiece(Color.WHITE, 84);
-                    case Piece.WHITE_QUEEN -> new QueenPiece(Color.WHITE, 84);
-                    case Piece.WHITE_ROOK -> new RookPiece(Color.WHITE, 84);
-                    case Piece.WHITE_BISHOP -> new BishopPiece(Color.WHITE, 84);
-                    case Piece.WHITE_KNIGHT -> new KnightPiece(Color.WHITE, 84);
-                    case Piece.WHITE_PAWN -> new PawnPiece(Color.WHITE, 84);
-                    case Piece.BLACK_KING -> new KingPiece(Color.BLACK, 84);
-                    case Piece.BLACK_QUEEN -> new QueenPiece(Color.BLACK, 84);
-                    case Piece.BLACK_ROOK -> new RookPiece(Color.BLACK, 84);
-                    case Piece.BLACK_BISHOP -> new BishopPiece(Color.BLACK, 84);
-                    case Piece.BLACK_KNIGHT -> new KnightPiece(Color.BLACK, 84);
-                    case Piece.BLACK_PAWN -> new PawnPiece(Color.BLACK, 84);
+                    case Piece.WHITE_KING -> new King(Color.WHITE, 84);
+                    case Piece.WHITE_QUEEN -> new Queen(Color.WHITE, 84);
+                    case Piece.WHITE_ROOK -> new Rook(Color.WHITE, 84);
+                    case Piece.WHITE_BISHOP -> new Bishop(Color.WHITE, 84);
+                    case Piece.WHITE_KNIGHT -> new Knight(Color.WHITE, 84);
+                    case Piece.WHITE_PAWN -> new Pawn(Color.WHITE, 84);
+                    case Piece.BLACK_KING -> new King(Color.BLACK, 84);
+                    case Piece.BLACK_QUEEN -> new Queen(Color.BLACK, 84);
+                    case Piece.BLACK_ROOK -> new Rook(Color.BLACK, 84);
+                    case Piece.BLACK_BISHOP -> new Bishop(Color.BLACK, 84);
+                    case Piece.BLACK_KNIGHT -> new Knight(Color.BLACK, 84);
+                    case Piece.BLACK_PAWN -> new Pawn(Color.BLACK, 84);
                     case Piece.None -> new NoPiece(Color.WHITE, 84);
                     default -> null;
                 });
@@ -124,7 +131,7 @@ public class ChessboardInitializer {
     }
     private ImageView createPieceImageView(int piece) {
         ImageView imageView = new ImageView();
-        String basePath = "/ChessSprites/";
+        String basePath = "/assets/";
         String imagePath = switch(piece) {
             case Piece.WHITE_KING -> basePath + "White/whiteKing.png";
             case Piece.WHITE_QUEEN -> basePath + "White/whiteQueen.png";
