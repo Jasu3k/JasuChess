@@ -71,7 +71,6 @@ public class Main extends Application {
                     button.setStyle("-fx-background-color: #70350B");
                 }
                 grid.add(button, col, row);
-
                 //Attach drag and drop handler to button?
                 Node graphicNode = button.getGraphic();
                 if (graphicNode instanceof ImageView pieceImageView) {
@@ -107,8 +106,6 @@ public class Main extends Application {
                     event.setDropCompleted(success);
                     event.consume();
                 });
-
-
             }
         }
 
